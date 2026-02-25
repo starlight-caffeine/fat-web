@@ -37,4 +37,5 @@ export default defineConfig({
     allowedHosts: ["localhost", "ideapad.local", "0.0.0.0"],
     https: true,
   },
+  base: "https://spacewagdev.github.io/fat-web/",
 });
