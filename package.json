@@ -1,0 +1,25 @@
+{
+  "name": "fat-web",
+  "version": "1.0.0",
+  "description": "FAT natural deduction system",
+  "main": "main.ts",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@types/lodash": "^4.17.24",
+    "@vitejs/plugin-basic-ssl": "^2.1.4",
+    "codemirror": "^6.0.2",
+    "lodash": "^4.17.23",
+    "unplugin-lezer": "^1.0.1",
+    "vite": "^7.3.1",
+    "vite-plugin-wasm-pack": "^0.1.12"
+  },
+  "scripts": {
+    "wasm": "wasm-pack build ./fat --target web",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.0"
+  }
+}

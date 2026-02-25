@@ -1,0 +1,32 @@
+@top Proof { Line+ }
+@skip { space }
+
+@tokens {
+    space { (' ' | '\t')+ }
+    Atom { Var | Literal }
+    Var { @asciiUppercase }
+    Literal { "⊤" | "⊥"  }
+    Negation { "!" | "¬" }
+    Bin_op { and | or | implies | xor | equiv }
+    and    { "^" | "∧" }
+    or     { "v" | "∨" }
+    implies   { "->" | "→" }
+    xor    { ">-<" |  "⊕"}
+    equiv  { "<->"| "↔" }
+    Comment { "#" ![\n]* }
+    eol  { "\n" }
+    Rulename { @asciiLetter (@asciiLetter | @digit | $[. -] )+ }
+    Bracketed_number { "(" number ")" }
+    number { @digit+ }
+    qed { "QED" }
+}
+
+Line  { (Comment | proofstep) eol }
+
+proofstep { Rulename "|" Expr "|" References qed? }
+
+Prop { (Negation Prop) | "(" Prop Bin_op Prop ")" | Atom }
+
+Expr { Prop (Bin_op Prop)* }
+
+References { number? ( "," Bracketed_number)? ","? }

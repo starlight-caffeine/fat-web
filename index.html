@@ -1,0 +1,96 @@
+<!doctype html>
+
+<head>
+    <title>FAT Natural Deduction</title>
+    <script src="src/mathjax.js" type="module"></script>
+    <script type="module" src="src/main.ts"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css"
+    />
+    <link rel="icon" href="fat_logo.svg" type="image/x-icon" />
+    <!--<link
+        href="https://db.onlinewebfonts.com/c/7a5261393eae1e7cbaaee7ceb1abc153?family=NewComputerModern+Math"
+        rel="stylesheet"
+    />-->
+</head>
+
+<body>
+    <header>
+        <img src="fat_logo.svg" />
+        <h1>Natural Deduction</h1>
+        <a class="link-nav-right" href="https://github.com/SpaceWAGDev/fat"
+            >GitHub</a
+        >
+    </header>
+
+    <div class="main-separation">
+        <div id="proof-side">
+            <nav id="editor_buttons">
+                <button>&not;</button>
+                <button>&and;</button>
+                <button>&or;</button>
+                <button>-></button>
+                <button><-></button>
+                <button>>-<</button>
+                <button>|</button>
+            </nav>
+            <div id="proof-editor"></div>
+            <div id="messages"></div>
+        </div>
+
+        <div id="result-side">
+            <div id="prooftree"></div>
+            <div id="rules">
+                <fieldset id="checking-options">
+                    <h5>Classical</h5>
+                    <input
+                        type="radio"
+                        disabled
+                        value="aristotle"
+                        name="ruleset"
+                    />
+                    <label for="aristotle">Syllogisms (Aristotle)<br /> </label>
+                    <input type="radio" value="frege" name="ruleset" />
+                    <label for="frege">Begriffsschrift (Frege)<br /></label>
+                    <input type="radio" checked value="essler" name="ruleset" />
+                    <label for="essler">
+                        KNS-J (Essler, Martinez) <br />
+                    </label>
+                    <input type="radio" disabled value="km" name="ruleset" />
+                    <label for="km"> Kalish-Montague Calculus <br /></label>
+                    <input
+                        type="radio"
+                        disabled
+                        value="c-intelim"
+                        name="ruleset"
+                    />
+                    <label for="km"
+                        >C-intelim (D'Aggostino, Gabbay, Modgil)<br
+                    /></label>
+                    <h5>Non-classical</h5>
+                    <input
+                        type="radio"
+                        disabled
+                        value="minimal"
+                        name="ruleset"
+                    />
+                    <label for="minimal">Minimal Logic<br /></label>
+                    <input
+                        type="radio"
+                        disabled
+                        value="heyting"
+                        name="ruleset"
+                    />
+                    <label for="heyting"
+                        >Heyting's Propositional Calculus (HPC) <br
+                    /></label>
+                    <input type="radio" value="custom" name="ruleset" />
+                    <label for="custom">Custom<br /></label>
+                </fieldset>
+                <ul id="rule-listing"></ul>
+            </div>
+        </div>
+    </div>
+</body>
