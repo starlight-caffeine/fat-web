@@ -19,4 +19,4 @@ DL.5.b | A -> ¬B      | 5
 vE   | ¬BvC           | 7
 ->E  | ¬C -> (¬B v C) | 4,8
 KD   | ¬B v C         | 3, 9 QED
-  `,extensions:[Ky,Xy,eb,Jy.compute(["doc"],async s=>{let e=document.querySelector("#checking-options input:checked"),t=await(await fetch(`/${e.value}.yaml`)).text();await Gy(s.doc.toString(),t,Uy)}),Zy.compute(["doc"],async s=>await bf(s.doc.toString())),fc(Yy)]});const ib=new D({state:tb,parent:document.getElementById("proof-editor")});for(let s of document.querySelectorAll("#editor_buttons button")){let e=s.innerText;s.onclick=()=>{jy(ib,e)}}
+  `,extensions:[Ky,Xy,eb,Jy.compute(["doc"],async s=>{let e=document.querySelector("#checking-options input:checked"),t=await(await fetch(`/fat-web/${e.value}.yaml`)).text();await Gy(s.doc.toString(),t,Uy)}),Zy.compute(["doc"],async s=>await bf(s.doc.toString())),fc(Yy)]});const ib=new D({state:tb,parent:document.getElementById("proof-editor")});for(let s of document.querySelectorAll("#editor_buttons button")){let e=s.innerText;s.onclick=()=>{jy(ib,e)}}
