@@ -1,0 +1,688 @@
+- rule:
+    antecedent:
+      - (⊤)
+    consequent: (X)
+  name: AE
+
+- rule:
+    antecedent:
+      - (X)
+      - (Y)
+    consequent: (X->Y)
+  name: ->E
+
+- rule:
+    antecedent:
+      - (X -> Y)
+      - (X)
+    consequent: (Y)
+  name: ->B
+
+- rule:
+    antecedent:
+      - (X)
+      - (Y)
+    consequent: (X^Y)
+  name: ^E
+
+- rule:
+    antecedent:
+      - (X ^ Y)
+    consequent: (Y)
+  name: ^B
+
+- rule:
+    antecedent:
+      - (X)
+    consequent: (X v Y)
+  name: vE
+
+- rule:
+    antecedent:
+      - (X v Y)
+      - (¬X)
+    consequent: (Y)
+  name: vB
+
+- rule:
+    antecedent:
+      - (X -> Y ^ ¬Y)
+    consequent: (¬X)
+  name: ¬E
+
+- rule:
+    antecedent:
+      - (¬(¬X))
+    consequent: (X)
+  name: ¬B
+
+- rule:
+    antecedent:
+      - (X -> Y)
+      - (Y -> X)
+    consequent: (X <-> Y)
+  name: <->E
+
+- rule:
+    antecedent:
+      - (X <-> Y)
+    consequent: (X -> Y)
+  name: <->B
+
+- rule:
+    antecedent:
+      - (X -> ¬Y)
+      - (¬X -> Y)
+    consequent: (X >-< Y)
+  name: ">-<E"
+
+- rule:
+    antecedent:
+      - (X >-< Y)
+    consequent: (X -> ¬Y)
+  name: ">-<B.a"
+
+- rule:
+    antecedent:
+      - (X >-< Y)
+    consequent: (¬X -> Y)
+  name: ">-<B.b"
+
+- rule:
+    antecedent:
+      - (¬(¬X))
+    consequent: (X)
+  name: SP.a
+
+- rule:
+    antecedent:
+      - (X)
+    consequent: (¬(¬X))
+  name: SP.b
+
+# Widerlegung
+- rule:
+    antecedent:
+      - (X->Y)
+      - (¬Y)
+    consequent: (¬X)
+  name: WL.1
+
+- rule:
+    antecedent:
+      - (¬X->Y)
+      - (¬X)
+    consequent: (Y)
+  name: WL.2
+
+- rule:
+    antecedent:
+      - (X->¬Y)
+      - (X)
+    consequent: (¬Y)
+  name: WL.3
+
+- rule:
+    antecedent:
+      - (¬X->¬Y)
+      - (Y)
+    consequent: (X)
+  name: WL.4
+
+- rule:
+    antecedent:
+      - (¬Y)
+      - (X <-> Y)
+    consequent: (¬X)
+  name: WL.5
+
+- rule:
+    antecedent:
+      - (¬Y)
+      - (Y <-> X)
+    consequent: (¬X)
+  name: WL.6
+
+- rule:
+    antecedent:
+      - (¬Y)
+      - (X <-> Y)
+    consequent: (¬X)
+  name: WL.5
+
+- rule:
+    antecedent:
+      - (¬Y)
+      - (X >-< Y)
+    consequent: (X)
+  name: WL.6
+
+- rule:
+    antecedent:
+      - (¬X)
+      - (X >-< Y)
+    consequent: (Y)
+  name: WL.7
+
+# Wendungsgesetze
+
+- rule:
+    antecedent:
+      - (X -> Y)
+    consequent: (¬X -> ¬Y)
+  name: WG.1.a
+
+- rule:
+    antecedent:
+      - (¬X -> ¬Y)
+    consequent: (X -> Y)
+  name: WG.1.b
+
+- rule:
+    antecedent:
+      - (X -> ¬Y)
+    consequent: (Y -> ¬X)
+  name: WG.2.a
+
+- rule:
+    antecedent:
+      - (¬X -> Y)
+    consequent: (¬Y -> X)
+  name: WG.2.b
+
+- rule:
+    antecedent:
+      - (¬X -> Y)
+    consequent: (¬Y -> X)
+  name: WG.3.a
+
+- rule:
+    antecedent:
+      - (¬Y -> X)
+    consequent: (¬X -> Y)
+  name: WG.3.b
+
+- rule:
+    antecedent:
+      - (¬X -> ¬Y)
+    consequent: (Y -> X)
+  name: WG.4.a
+
+- rule:
+    antecedent:
+      - (Y -> X)
+    consequent: (¬X -> ¬Y)
+  name: WG.4.b
+
+- rule:
+    antecedent:
+      - (X <-> Y)
+    consequent: (¬Y <-> ¬X)
+  name: WG.5
+
+- rule:
+    antecedent:
+      - (X <-> ¬Y)
+    consequent: (Y <-> ¬X)
+  name: WG.7
+
+- rule:
+    antecedent:
+      - (X <-> ¬Y)
+    consequent: (¬X <-> Y)
+  name: WG.8
+
+- rule:
+    antecedent:
+      - (X <-> Y)
+    consequent: (¬Y <-> ¬X)
+  name: WG.8
+
+- rule:
+    antecedent:
+      - (¬X <-> Y)
+    consequent: (¬Y <-> X)
+  name: WG.9
+
+- rule:
+    antecedent:
+      - (¬X <-> Y)
+    consequent: (¬Y <-> X)
+  name: WG.10
+
+- rule:
+    antecedent:
+      - (¬X <-> ¬Y)
+    consequent: (X <-> Y)
+  name: WG.11
+
+- rule:
+    antecedent:
+      - (X >-< Y)
+    consequent: (¬Y >-< ¬X)
+  name: WG.13
+
+# RA
+
+- rule:
+    antecedent:
+      - (X -> Y)
+      - (X -> ¬Y)
+    consequent: (¬X)
+  name: RA
+
+- rule:
+    antecedent:
+      - (X -> Y)
+      - (¬Y)
+    consequent: (¬X)
+  name: WS
+
+- rule:
+    antecedent:
+      - (X -> (Y <-> ¬Y))
+    consequent: (¬X)
+  name: SN
+
+# AD
+- rule:
+    antecedent:
+      - (AvB)
+      - (X->Z)
+      - (Y->Z)
+    consequent: (Z)
+  name: AD
+
+# KS
+- rule:
+    antecedent:
+      - (X)
+      - ¬(X^Y)
+    consequent: (¬Y)
+  name: KS
+
+# LS 14, 15
+- rule:
+    antecedent:
+      - (¬(X^(¬X))-> Y)
+    consequent: (Y)
+  name: LS 14
+
+- rule:
+    antecedent:
+      - (Av¬X -> Y)
+    consequent: (Y)
+  name: LS 15
+
+# KD
+- rule:
+    antecedent:
+      - (X->Y)
+      - (¬X->Y)
+    consequent: (Y)
+  name: KD
+
+# HA
+- rule:
+    antecedent:
+      - (X)
+    consequent: (Y->X)
+  name: HA
+
+# HA, KA, AA
+- rule:
+    antecedent:
+      - (X)
+    consequent: (Y->X)
+  name: HA
+
+- rule:
+    antecedent:
+      - ⊤
+    consequent: ((X^Y) -> X)
+  name: KA.1
+
+- rule:
+    antecedent:
+      - ⊤
+    consequent: ((X^Y) -> Y)
+  name: KA.2
+
+- rule:
+    antecedent:
+      - (⊤)
+    consequent: X -> (XvY)
+  name: AA
+
+# LS 21-24
+- rule:
+    antecedent:
+      - (X ^ Y)
+    consequent: (XvY)
+  name: LS 21
+
+- rule:
+    antecedent:
+      - (X ^ Y)
+    consequent: (XvZ)
+  name: LS 22
+
+- rule:
+    antecedent:
+      - (X ^ Y)
+    consequent: (X->Y)
+  name: LS 23.a
+
+- rule:
+    antecedent:
+      - (X ^ Y)
+    consequent: (Y->X)
+  name: LS 23.b
+
+- rule:
+    antecedent:
+      - (X ^ Y)
+    consequent: (Z->Y)
+  name: LS 24.a
+
+- rule:
+    antecedent:
+      - (X ^ Y)
+    consequent: (Z->X)
+  name: LS 24.b
+
+# ÄA
+
+- rule:
+    antecedent:
+      - (X ^ Y)
+    consequent: (X<->Y)
+  name: ÄA
+
+# FV
+- rule:
+    antecedent:
+      - (X->(X->Y))
+    consequent: (X->Y)
+  name: FV
+
+# UP
+- rule:
+    antecedent:
+      - (X)
+      - (¬X)
+    consequent: Y
+  name: UP.1
+
+- rule:
+    antecedent:
+      - (X)
+    consequent: (¬X -> Y)
+  name: UP.2
+
+- rule:
+    antecedent:
+      - (¬X)
+    consequent: (X->Y)
+  name: UP.3
+
+# Hauptsätze (V)
+
+# Assoziativität
+- rule:
+    antecedent:
+      - (X ^ (Y ^ Z))
+    consequent: ((X^Y)^Z)
+  name: (V)LS 1.a
+
+- rule:
+    antecedent:
+      - ((X^Y)^Z)
+    consequent: (X^(Y^Z))
+  name: (V)LS 1.b
+
+- rule:
+    antecedent:
+      - (Xv(YvZ))
+    consequent: ((XvY)vZ)
+  name: (V)LS 2.a
+
+- rule:
+    antecedent:
+      - ((XvY)vZ)
+    consequent: (Xv(YvZ))
+  name: (V)LS 2.b
+
+- rule:
+    antecedent:
+      - (X<->(Y<->Z))
+    consequent: ((X<->Y)<->Z)
+  name: V.LS 3.a
+
+- rule:
+    antecedent:
+      - ((X<->Y)<->Z)
+    consequent: (X<->(Y<->Z))
+  name: V.LS 3.b
+
+- rule:
+    antecedent:
+      - (X>-<(Y>-<Z))
+    consequent: ((X>-<Y) >-< Z)
+  name: V.LS 4.a
+
+- rule:
+    antecedent:
+      - ((X>-<Y)>-<Z)
+    consequent: (X>-<(Y>-<Z))
+  name: V.LS 4.b
+
+# Gesetze für die Implikation
+
+- rule:
+    antecedent:
+      - (X^Y -> Z)
+    consequent: (X->(Y->Z))
+  name: V.LS 10.a
+
+- rule:
+    antecedent:
+      - (X->(Y->Z))
+    consequent: (X^Y -> Z)
+  name: V.LS 10.b
+
+- rule:
+    antecedent:
+      - (X^Y -> Z)
+    consequent: (Y->(X->Z))
+  name: V.LS 11.a
+
+- rule:
+    antecedent:
+      - (Y->(X->Z))
+    consequent: (X^Y -> Z)
+  name: V.LS 11.b
+
+- rule:
+    antecedent:
+      - (X->(Y->Z))
+    consequent: (Y->(X->Z))
+  name: V.LS 12.a
+
+- rule:
+    antecedent:
+      - (Y->(X->Z))
+    consequent: (X->(Y->Z))
+  name: V.LS 12.b
+
+- rule:
+    antecedent:
+      - (X^Y -> Z)
+    consequent: (X^(¬Z) -> ¬Y)
+  name: V.LS 13.a
+
+- rule:
+    antecedent:
+      - (X^(¬Z) -> ¬Y)
+    consequent: (X^Y -> Z)
+  name: V.LS 13.b
+
+- rule:
+    antecedent:
+      - (X^Y -> Z)
+    consequent: (X^(¬Z) -> ¬Y)
+  name: V.LS 14.a
+
+- rule:
+    antecedent:
+      - (X^(¬Z) -> ¬Y)
+    consequent: (X^Y -> Z)
+  name: V.LS 14.b
+
+- rule:
+    antecedent:
+      - (X^Y -> Z)
+    consequent: (Y^(¬Z) -> ¬X)
+  name: V.LS 15.a
+
+- rule:
+    antecedent:
+      - (Y^(¬Z) -> ¬X)
+    consequent: (X^Y -> Z)
+  name: V.LS 15.b
+
+- rule:
+    antecedent:
+      - (X^Y -> Z)
+    consequent: (Y^(¬Z) -> ¬X)
+  name: V.LS 16.a
+
+- rule:
+    antecedent:
+      - (Y^(¬Z) -> ¬X)
+    consequent: (X^Y -> Z)
+  name: V.LS 16.b
+
+- rule:
+    antecedent:
+      - (X^Y -> Z)
+    consequent: (X -> ¬Y v Z)
+  name: V.LS 17.a
+
+- rule:
+    antecedent:
+      - (X -> ¬Y v Z)
+    consequent: (X^Y -> Z)
+  name: V.LS 17.b
+
+- rule:
+    antecedent:
+      - (X^Y -> Z)
+    consequent: (X -> Z v ¬Y)
+  name: V.LS 17.c
+
+- rule:
+    antecedent:
+      - (X -> Z v ¬Y)
+    consequent: (X^Y -> Z)
+  name: V.LS 17.d
+
+- rule:
+    antecedent:
+      - (X^Y -> Z)
+    consequent: (Y -> ¬X v Z)
+  name: V.LS 17.e
+
+- rule:
+    antecedent:
+      - (Y -> ¬X v Z)
+    consequent: (X^Y -> Z)
+  name: V.LS 17.f
+
+- rule:
+    antecedent:
+      - (X^Y -> Z)
+    consequent: (Y -> Z v ¬X)
+  name: V.LS 17.g
+
+- rule:
+    antecedent:
+      - (Y -> Z v ¬X)
+    consequent: (X^Y -> Z)
+  name: V.LS 17.h
+
+# KR
+
+- rule:
+    antecedent:
+      - (X->Y)
+      - (Y->Z)
+    consequent: (X->Z)
+  name: KR
+
+# LS 31-33
+
+- rule:
+    antecedent:
+      - (X>-<Y)
+      - (Y>-<Z)
+    consequent: (X<->Z)
+  name: IV.LS 31
+
+- rule:
+    antecedent:
+      - (X>-<Y)
+    consequent: (X<->¬Y)
+  name: IV.LS 32.a
+
+- rule:
+    antecedent:
+      - (X<->¬Y)
+    consequent: (X>-<Y)
+  name: IV.LS 32.b
+
+- rule:
+    antecedent:
+      - (X>-<Y)
+    consequent: (¬(X<->Y))
+  name: IV.LS 33.a
+
+- rule:
+    antecedent:
+      - (¬(X<->Y))
+    consequent: (X>-<Y)
+  name: IV.LS 33.b
+
+# SVI SVW SVD SDK
+
+- rule:
+    antecedent:
+      - (⊤)
+    consequent: (X->X)
+  name: SVI
+
+- rule:
+    antecedent:
+      - (⊥)
+    consequent: (X^¬X)
+  name: SVW
+
+- rule:
+    antecedent:
+      - (⊤)
+    consequent: (Xv¬X)
+  name: SVD
+
+- rule:
+    antecedent:
+      - (⊤)
+    consequent: (X >-< ¬X)
+  name: SDK
+
+# Dualität
+
+- rule:
+    antecedent:
+      - (¬(X^Y))
+    consequent: (X->(¬Y))
+  name: DL.5.b

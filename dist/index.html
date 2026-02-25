@@ -1,0 +1,95 @@
+<!doctype html>
+
+<head>
+    <title>FAT Natural Deduction</title>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css"
+    />
+    <link rel="icon" href="/assets/fat_logo-CfbF-IBn.svg" type="image/x-icon" />
+    <!--<link
+        href="https://db.onlinewebfonts.com/c/7a5261393eae1e7cbaaee7ceb1abc153?family=NewComputerModern+Math"
+        rel="stylesheet"
+    />-->
+  <script type="module" crossorigin src="/assets/index-BOg_oqwI.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DPtIHisT.css">
+</head>
+
+<body>
+    <header>
+        <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='UTF-8'%20standalone='no'?%3e%3c!DOCTYPE%20svg%20PUBLIC%20'-//W3C//DTD%20SVG%201.1//EN'%20'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3e%3csvg%20width='100%25'%20height='100%25'%20viewBox='0%200%201693%201402'%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20xml:space='preserve'%20xmlns:serif='http://www.serif.com/'%20style='fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;'%3e%3cg%20transform='matrix(1,0,0,1,-725.089211,-290.300239)'%3e%3cg%20transform='matrix(1.011983,0,0,1.011983,-85.395006,-12.010874)'%3e%3cg%20transform='matrix(1.105499,0,0,2.309754,-146.38703,-473.596954)'%3e%3crect%20x='856.875'%20y='334.377'%20width='1512.496'%20height='599.409'%20style='fill:white;'/%3e%3c/g%3e%3cg%20transform='matrix(0.988159,0,0,0.988159,84.38384,12.856811)'%3e%3cpath%20d='M820.967,1321.889L820.967,714.43L1229.322,715.679L1230.189,786.88L901.239,786.88L901.239,974.733L1185.915,974.733L1185.915,1046.316L901.239,1046.316L901.239,1321.889L820.967,1321.889ZM1766.153,715.679L1533.345,1321.889L1446.921,1321.889L1198.813,715.679L1290.2,715.679L1360.911,899.278L1614.394,899.278L1680.97,715.679L1766.153,715.679ZM1591.237,964.613L1385.721,964.613L1448.989,1132.5C1468.286,1183.5%201491.994,1258.208%201491.994,1258.208L1591.237,964.613ZM1959.264,1321.889L1959.264,782.044L1731.64,781.662L1731.64,715.679L2351.587,715.679L2351.587,781.662L2033.258,782.044L2033.258,1321.889L1959.264,1321.889Z'%20style='fill-rule:nonzero;'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e" />
+        <h1>Natural Deduction</h1>
+        <a class="link-nav-right" href="https://github.com/SpaceWAGDev/fat"
+            >GitHub</a
+        >
+    </header>
+
+    <div class="main-separation">
+        <div id="proof-side">
+            <nav id="editor_buttons">
+                <button>&not;</button>
+                <button>&and;</button>
+                <button>&or;</button>
+                <button>-></button>
+                <button><-></button>
+                <button>>-<</button>
+                <button>|</button>
+            </nav>
+            <div id="proof-editor"></div>
+            <div id="messages"></div>
+        </div>
+
+        <div id="result-side">
+            <div id="prooftree"></div>
+            <div id="rules">
+                <fieldset id="checking-options">
+                    <h5>Classical</h5>
+                    <input
+                        type="radio"
+                        disabled
+                        value="aristotle"
+                        name="ruleset"
+                    />
+                    <label for="aristotle">Syllogisms (Aristotle)<br /> </label>
+                    <input type="radio" value="frege" name="ruleset" />
+                    <label for="frege">Begriffsschrift (Frege)<br /></label>
+                    <input type="radio" checked value="essler" name="ruleset" />
+                    <label for="essler">
+                        KNS-J (Essler, Martinez) <br />
+                    </label>
+                    <input type="radio" disabled value="km" name="ruleset" />
+                    <label for="km"> Kalish-Montague Calculus <br /></label>
+                    <input
+                        type="radio"
+                        disabled
+                        value="c-intelim"
+                        name="ruleset"
+                    />
+                    <label for="km"
+                        >C-intelim (D'Aggostino, Gabbay, Modgil)<br
+                    /></label>
+                    <h5>Non-classical</h5>
+                    <input
+                        type="radio"
+                        disabled
+                        value="minimal"
+                        name="ruleset"
+                    />
+                    <label for="minimal">Minimal Logic<br /></label>
+                    <input
+                        type="radio"
+                        disabled
+                        value="heyting"
+                        name="ruleset"
+                    />
+                    <label for="heyting"
+                        >Heyting's Propositional Calculus (HPC) <br
+                    /></label>
+                    <input type="radio" value="custom" name="ruleset" />
+                    <label for="custom">Custom<br /></label>
+                </fieldset>
+                <ul id="rule-listing"></ul>
+            </div>
+        </div>
+    </div>
+</body>
